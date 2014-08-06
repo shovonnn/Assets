@@ -262,11 +262,11 @@ class Manager
 			return null;
 
 		if($this->pipeline)
-			return '<link type="text/css" rel="stylesheet" href="'.$this->cssPipeline().'" />'."\n";
+			return '<link type="text/css" rel="stylesheet" href="'.url($this->cssPipeline()).'" />'."\n";
 
 		$output = '';
 		foreach($this->css as $file)
-			$output .= '<link type="text/css" rel="stylesheet" href="'.$file.'" />'."\n";
+			$output .= '<link type="text/css" rel="stylesheet" href="'.url($file).'" />'."\n";
 
 		return $output;
 	}
@@ -282,11 +282,11 @@ class Manager
 			return null;
 
 		if($this->pipeline)
-			return '<script type="text/javascript" src="'.$this->jsPipeline().'"></script>'."\n";
+			return '<script type="text/javascript" src="'.url($this->jsPipeline()).'"></script>'."\n";
 
 		$output = '';
 		foreach($this->js as $file)
-			$output .= '<script type="text/javascript" src="'.$file.'"></script>'."\n";
+			$output .= '<script type="text/javascript" src="'.url($file).'"></script>'."\n";
 
 		return $output;
 	}
